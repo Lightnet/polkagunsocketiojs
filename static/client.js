@@ -1,6 +1,6 @@
 // var Gun = require('gun'); // in NodeJS
 // var Gun = require('gun/gun'); // in React
-console.log("public folder polka http");
+console.log("public folder polka http.");
 
 console.log(location.host);
 console.log(location.href);
@@ -28,7 +28,7 @@ socket.on('reconnect_error', function () {
 
 //console.log(location.host+"/gun");
 //console.log(window.location.href+'gun');
-var gun = Gun(window.location.href+'gun');
+var gun = Gun(window.location.origin+'gun');
 gun.on('hi', peer => {//peer connect
   console.log('connect peer to',peer);
   //console.log('peer connect!');

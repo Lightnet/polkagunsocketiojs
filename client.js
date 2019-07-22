@@ -1,15 +1,17 @@
 // var Gun = require('gun'); // in NodeJS
 // var Gun = require('gun/gun'); // in React
-console.log("root folder");
+console.log("root folder polka http");
 
-var socket = io();
-//var socket = io('http://localhost:8080', { transports: ['websocket'] });
-//var socket = io('ws://localhost:8080', { transports: ['websocket'] });
-//var socket = io('http://localhost:8080', { transports: ['websocket'] });
+console.log(location.host);
+console.log(location.href);
+//https://socket.io/docs/using-multiple-nodes/
+//https://stackoverflow.com/questions/34798085/websocket-connection-to-failed-err-ssl-protocol-error
+var socket = io.connect(window.location.origin);
+
 console.log(socket);
 
 socket.on('connect', function () {
-  console.log('you have been connected');
+  console.log('you have been connected socket.io');
 });
 socket.on('disconnect', function () {
   console.log('you have been disconnected');
@@ -25,9 +27,8 @@ socket.on('reconnect_error', function () {
 });
 
 //console.log(location.host+"/gun");
-console.log(window.location.href+'gun');
-var gun = Gun(window.location.href+'gun');
-
+//console.log(window.location.href+'gun');
+var gun = Gun(window.location.origin+'gun');
 gun.on('hi', peer => {//peer connect
   console.log('connect peer to',peer);
   //console.log('peer connect!');
