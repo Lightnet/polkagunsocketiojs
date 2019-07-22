@@ -1,0 +1,23 @@
+{
+  "name": "polka-gun",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "starthttp": "node httpserver.js",
+    "polkahttpserver": "node polkahttpserver.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "gun": "0.2019.627",
+    "helmet": "^3.19.0",
+    "polka": "^0.5.2",
+    "sirv": "^0.4.2",
+    "socket.io": "^2.2.0",
+    "uuid": "^3.3.2"
+  }
+}
